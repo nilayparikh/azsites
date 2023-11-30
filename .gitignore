@@ -1,0 +1,17 @@
+# Terraform
+.terraform
+*.tfstate
+*.tfstate.backup
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+
+# Custom
+src/terraform/.env
+src/terraform/.plans
+.env
+src/terraform/.backend/prod.azurerm.tfbackend
