@@ -70,10 +70,3 @@ To use this variable file:
 3. Run `terraform plan/apply` to deploy infrastructure
 
 The variables file validates inputs, so any errors will be caught during `terraform plan`.
-
-
-# Sample Website 
-
-The sample website code in this project is used from the [Minimal Research Theme](https://github.com/SebastinSanty/minimal-research-theme) repo by [Sebastin Santy](https://github.com/SebastinSanty).
-
-The website code is used without modification as a sample static site for this project.
