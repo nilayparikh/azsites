@@ -18,7 +18,7 @@ variable "env" {
 }
 
 variable "static_site_config" {
-  type = list(object({
+  type = object({
     index_document     = string
     error_404_document = string
     identifier         = string
@@ -27,15 +27,14 @@ variable "static_site_config" {
       name             = string
       asverify_enabled = optional(bool)
     }))
-  }))
+  })
   description = "Static site configuration"
   validation {
     condition = alltrue([
-      for config in var.static_site_config :
-      can(regex("^([a-zA-Z0-9]+/)?[a-zA-Z0-9]+\\.[a-zA-Z0-9]+$", config.index_document)) &&
-      can(regex("^([a-zA-Z0-9]+/)?[a-zA-Z0-9]+\\.[a-zA-Z0-9]+$", config.error_404_document)) &&
-      can(regex("^[a-z0-9]{1,4}$", config.identifier)) &&
-      can(regex("^(\\.|\\.\\.)?(/[a-zA-Z0-9]+)*$", config.src))
+      can(regex("^([a-zA-Z0-9]+/)?[a-zA-Z0-9]+\\.[a-zA-Z0-9]+$", var.static_site_config.index_document)) &&
+      can(regex("^([a-zA-Z0-9]+/)?[a-zA-Z0-9]+\\.[a-zA-Z0-9]+$", var.static_site_config.error_404_document)) &&
+      can(regex("^[a-z0-9]{1,4}$", var.static_site_config.identifier)) &&
+      can(regex("^(\\.|\\.\\.)?(/[a-zA-Z0-9]+)*$", var.static_site_config.src))
     ])
     error_message = "Index page and error_404_page must be valid absolute paths, identifier must be 4 lowercase alphanumeric characters, and src must be a valid relative or absolute path. Domain name must be a valid domain. If domain name is provided, asverify_enabled must exist."
   }
