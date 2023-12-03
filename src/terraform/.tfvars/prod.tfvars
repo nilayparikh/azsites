@@ -1,14 +1,14 @@
-project = "ergx"
-env     = "prod"
+project = "npazs"
+env     = "demo"
 
 static_site_config = [
   {
     identifier         = "mrt"
     index_document     = "index.html"
     error_404_document = "404.html"
-    src = "../html/mrt"
+    src                = "../html/mrt"
     domain = {
-      name = "mrt.azsites.oss.nilayparikh.com"
+      name             = "mrt.azsites.oss.nilayparikh.com"
       asverify_enabled = true
     }
   },
@@ -16,9 +16,9 @@ static_site_config = [
     identifier         = "one"
     index_document     = "index.html"
     error_404_document = "404.html"
-    src = "../html/one"
+    src                = "../html/one"
     domain = {
-      name = "two.azsites.oss.nilayparikh.com"
+      name             = "one.azsites.oss.nilayparikh.com"
       asverify_enabled = true
     }
   },
@@ -26,9 +26,9 @@ static_site_config = [
     identifier         = "two"
     index_document     = "index.html"
     error_404_document = "404.html"
-    src = "../html/mrt"
+    src                = "../html/two"
     domain = {
-      name = "two.azsites.oss.nilayparikh.com"
+      name             = "two.azsites.oss.nilayparikh.com"
       asverify_enabled = true
     }
   }

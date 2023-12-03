@@ -1,4 +1,4 @@
-resource_group_name  = "terraform"
-storage_account_name = "ergxtfstates"
-container_name       = "site"
-key                  = "prod.tfstate"
+resource_group_name  = "your resource group"
+storage_account_name = "your storage account"
+container_name       = "storage account container"
+key                  = "key.tfstate"

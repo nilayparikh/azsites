@@ -15,3 +15,7 @@ src/terraform/.env
 src/terraform/.plans
 .env
 src/terraform/.backend/prod.azurerm.tfbackend
+src/terraform/.terraform.lock.hcl
+src/terraform/.terraform.lock.hcl
+src/terraform/.terraform.lock.hcl
+src/terraform/.terraform.lock.hcl

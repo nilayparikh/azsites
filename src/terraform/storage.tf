@@ -17,7 +17,7 @@ resource "azurerm_storage_account" "main" {
   dynamic "custom_domain" {
     for_each = each.value.domain != null ? each.value.domain.name != null ? [1] : [] : []
     content {
-      name = each.value.domain.name
+      name          = each.value.domain.name
       use_subdomain = each.value.domain.asverify_enabled
     }
   }
@@ -26,7 +26,7 @@ resource "azurerm_storage_account" "main" {
     local.auto_tags,
     {
       "static_site_config_identifier" = each.value.identifier,
-      "last_run_on" = timestamp()
+      "last_run_on"                   = timestamp()
     }
   )
 }
@@ -39,5 +39,6 @@ resource "azurerm_storage_blob" "main" {
   storage_container_name = "$web"
   type                   = "Block"
   source                 = "${each.value.src}/${each.key}"
-  content_type = lookup(local.mime_types, ".${element(reverse(split(".", each.key)), 0)}", "application/octet-stream")
+  content_type           = lookup(local.mime_types, ".${element(reverse(split(".", each.key)), 0)}", "application/octet-stream")
+  content_md5            = filemd5("${each.value.src}/${each.key}")
 }
