@@ -13,7 +13,7 @@ resource "azurerm_storage_account" "main" {
   }
 
   dynamic "custom_domain" {
-    for_each = var.static_site_config.domain != null && var.static_site_config.domain.name != null ? [1] : []
+    for_each = var.static_site_config.domain == null ? [] : var.static_site_config.domain.name != null ? [1] : []
     content {
       name          = var.static_site_config.domain.name
       use_subdomain = var.static_site_config.domain.asverify_enabled

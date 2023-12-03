@@ -19,3 +19,4 @@ src/terraform/.terraform.lock.hcl
 src/terraform/.terraform.lock.hcl
 src/terraform/.terraform.lock.hcl
 src/terraform/.terraform.lock.hcl
+src/terraform/.backend/dev.azurerm.tfbackend

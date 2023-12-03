@@ -50,7 +50,7 @@ fi
 case $action in
   "init")
     backend_file="./.backend/${env}.azurerm.tfbackend"
-    terraform init -backend-config="$backend_file"
+    terraform init -backend-config="$backend_file" -reconfigure
     ;;
   "lint")
     terraform fmt -recursive -check=true
