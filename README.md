@@ -51,7 +51,7 @@ The variables file defines the key configuration parameters for the Terraform co
 
 The `project` and `env` variables set the base project name and environment. These will be used to construct resource names.
 
-The `static_site_config` variable defines a list of static site configurations. Each configuration has:
+The `static_site_config` variable defines static site configuration. Configuration has:
 
 - `identifier` - A unique 4 character ID for the site
 - `index_document` - The index page file
@@ -60,8 +60,6 @@ The `static_site_config` variable defines a list of static site configurations. 
 - `domain` - Optional domain configuration
   - `name` - Custom domain name 
   - `asverify_enabled` - Whether to use Azure auto domain verification
-
-This allows defining multiple static site configs in one Terraform module.
 
 The `region` variable sets the Azure region to deploy to.
 
