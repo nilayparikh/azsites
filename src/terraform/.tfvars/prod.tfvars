@@ -6,10 +6,10 @@ static_site_config = {
   index_document     = "index.html"
   error_404_document = "404.html"
   src                = "../html"
-  # domain = {
-  #   name             = "azsites.nilayparikh.com"
-  #   asverify_enabled = true
-  # }
+  domain = {
+    name             = "azsites.nilayparikh.com"
+    asverify_enabled = true
+  }
 }
 
 region = {
